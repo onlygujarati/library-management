@@ -19,15 +19,15 @@ Follow these steps to run the application locally:
 
 ### 1. Clone the Repo
 
-```bash
+bash
 git clone https://github.com/your-username/library-api.git
 cd library-api
 
 The API supports secure authentication using **Laravel Sanctum**. Upon successful registration or login, a bearer token is returned that must be included in future requests to access protected routes.
 
-- **Register URL**: `POST /api/register`  
+ **Register URL**: `POST /api/register`  
   Example Payload:
-  ```json
+  json
   {
       "name": "test",
       "email": "test@demo.com",
@@ -37,9 +37,9 @@ The API supports secure authentication using **Laravel Sanctum**. Upon successfu
   }
 
   
-- **Login URL**: `POST /api/login`  
+ **Login URL**: `POST /api/login`  
   Example Payload:
-  ```json
+  json
   {
       "name": "test",
       "email": "test@demo.com",
