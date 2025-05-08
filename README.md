@@ -48,7 +48,7 @@ The API supports secure authentication using **Laravel Sanctum**. Upon successfu
       "status": "active"
   }
 
-### 2. Ensure PHP 8.2+
+### 2. Ensure PHP 8.1+
     Check PHP version:
     php -v
 
