@@ -144,7 +144,7 @@ class BookController extends Controller
     public function store(BookRequest $request)
     {
         if (!auth()->user()->hasRole('admin')) {
-            return response()->json(['message' => __('message.permission_denied')]);
+            return response()->json(['message' => __('message.permission_denied')],403);
         }
 
         // $id = $request->id;
@@ -181,7 +181,7 @@ class BookController extends Controller
     public function update(BookRequest $request)
     {
         if (!auth()->user()->hasRole('admin')) {
-            return response()->json(['message' => __('message.permission_denied')]);
+            return response()->json(['message' => __('message.permission_denied')],403);
         }
 
         $id = $request->id;
@@ -220,7 +220,7 @@ class BookController extends Controller
     public function destroy(Request $request)
     {
         if (!auth()->user()->hasRole('admin')) {
-            return response()->json(['message' => __('message.permission_denied')]);
+            return response()->json(['message' => __('message.permission_denied')],403);
         }
 
         $id = $request->id;
