@@ -14,9 +14,9 @@ Route::post('login',[API\UserController::class,'login']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     
-    Route::get('book-list', [ API\BookController::class, 'getList'] );
     Route::get('logout',[ API\UserController::class, 'logout']);
-
+    
+    Route::get('book-list', [ API\BookController::class, 'getList'] );
     Route::get('book-detail', [ API\BookController::class, 'detail'] );
     Route::post('create-book', [ API\BookController::class, 'store'] );
     Route::post('update-book', [ API\BookController::class, 'update'] );

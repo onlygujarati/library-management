@@ -112,6 +112,8 @@ class UserController extends Controller
      */
     public function login(Request $request)
     {      
+        $credentials = $request->only('email', 'password');
+
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
             $success = $user;
@@ -119,7 +121,9 @@ class UserController extends Controller
             return response()->json([ 'message' => __('message.login_success'),'token' => $success['api_token'], 'data' => $success ], 200 );
         }
         else{
-            return response()->json(['message' => __('message.login_failed') ],400);
+            return response()->json([
+                'message' => 'Invalid credentials'
+            ], 401); // MUST be 401
         }
     }
 
