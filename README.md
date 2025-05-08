@@ -54,6 +54,9 @@ The API supports secure authentication using **Laravel Sanctum**. Upon successfu
 
 ### 3. Install Dependencies
     composer install
+     
+### (3) if any issue in composer install then use command
+    composer install --ignore-platform-reqs
 
 ### 4. Create Environment File
     cp .env.example .env
@@ -94,6 +97,21 @@ The API supports secure authentication using Laravel Sanctum. Upon successful re
     POST /api/books-return – Return a book
     GET /api/my-borrow-book – List your borrowed books
 
-📑 API Documentation
+## 📑 API Documentation
+   - Swagger UI reads this JSON and shows a nice web interface where you can:
+    - View all available API endpoints
+    - See request/response formats
+    - Execute live API calls (if enabled)
+
+    ---
+
+    ### 🛠 How to Regenerate Documentation
+
+    Whenever you update your API annotations or routes, run:
+
+    php artisan l5-swagger:generate
+
+  ### 📎 Access Link
+    Once running, visit:
     Swagger UI is available at:
     http://localhost:8000/api/documentation
