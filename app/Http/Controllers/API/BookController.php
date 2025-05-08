@@ -265,7 +265,7 @@ class BookController extends Controller
 
         $book_borrow = $book->bookborrow()->where('user_id', $auth_user->id)->first();
         if ( $book_borrow ) {
-            return response()->json(['message' => __('message.book_alredy_borrowed')], 400);
+            return response()->json(['message' => __('message.book_alredy_borrowed')], 200);
         }else{
             BookBorrow::create([ 'user_id' => $auth_user->id, 'book_id' => $book->id ]);
         }
