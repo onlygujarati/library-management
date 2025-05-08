@@ -15,11 +15,13 @@ A RESTful API to manage books, users, and borrowing logic, built with Laravel 10
 
 ## ⚙️ Setup Instructions
 
+Follow these steps to run the application locally:
 
 ### 1. Clone the Repo
-<!-- ```bash
+
+```bash
 git clone https://github.com/your-username/library-api.git
-cd library-api -->
+cd library-api
 
 The API supports secure authentication using **Laravel Sanctum**. Upon successful registration or login, a bearer token is returned that must be included in future requests to access protected routes.
 
@@ -45,3 +47,53 @@ The API supports secure authentication using **Laravel Sanctum**. Upon successfu
       "user_type": "user",
       "status": "active"
   }
+
+### 2. Ensure PHP 8.2+
+    Check PHP version:
+    php -v
+
+### 3. Install Dependencies
+    composer install
+
+### 4. Create Environment File
+    cp .env.example .env
+
+### 5. Generate Application Key
+    php artisan key:generate
+
+### 6. Configure Database
+Create a MySQL database named laravel, then edit the .env file
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD=
+
+###  7. Run Migrations
+    php artisan migrate
+
+###  8.  Start the Application
+    php artisan serve
+
+    Visit the app at:
+    http://localhost:8000
+
+---
+
+## 🔐 Authentication
+The API supports secure authentication using Laravel Sanctum. Upon successful registration or login, you’ll receive a bearer token. Include this token in the Authorization header for protected routes:
+
+    makefile
+    Authorization: Bearer your_token_here
+
+
+## 📚 Book Management
+    POST /api/create-book – Add new book
+    POST /api/update-book – Update book
+    POST /api/delete-book – Delete book
+    GET /api/book-list – List all books
+    POST /api/books-borrow – Borrow a book
+    POST /api/books-return – Return a book
+    GET /api/my-borrow-book – List your borrowed books
+
+📑 API Documentation
+    Swagger UI is available at:
+    http://localhost:8000/api/documentation
