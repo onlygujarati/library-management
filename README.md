@@ -97,7 +97,7 @@ The API supports secure authentication using Laravel Sanctum. Upon successful re
     POST /api/books-return – Return a book
     GET /api/my-borrow-book – List your borrowed books
 
-## 📑 API Documentation
+ ## 📑 API Documentation
    - Swagger UI reads this JSON and shows a nice web interface where you can:
     - View all available API endpoints
     - See request/response formats
@@ -115,3 +115,16 @@ The API supports secure authentication using Laravel Sanctum. Upon successful re
     Once running, visit:
     Swagger UI is available at:
     http://localhost:8000/api/documentation
+
+  ### 🧪 Running Automated Tests
+    This project includes automated tests to ensure the API functions correctly. To run the tests, execute the following command:
+
+    php artisan test
+
+
+    Example Tests:
+    User Registration: Ensure users can register successfully.
+    User Login: Ensure users can login and receive a valid token.
+    Book Borrowing/Returning: Test book borrowing and returning logic for members.
+    Book CRUD: Ensure that only admins can create, update, and delete books.
+
