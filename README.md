@@ -41,11 +41,8 @@ The API supports secure authentication using **Laravel Sanctum**. Upon successfu
   Example Payload:
   json
   {
-      "name": "test",
       "email": "test@demo.com",
       "password": "12345678",
-      "user_type": "user",
-      "status": "active"
   }
 
 ### 2. Ensure PHP 8.1+
