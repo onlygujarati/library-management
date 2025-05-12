@@ -42,7 +42,7 @@ The API supports secure authentication using **Laravel Sanctum**. Upon successfu
   json
   {
       "email": "test@demo.com",
-      "password": "12345678",
+      "password": "12345678"
   }
 
 ### 2. Ensure PHP 8.1+
@@ -84,6 +84,31 @@ The API supports secure authentication using Laravel Sanctum. Upon successful re
     makefile
     Authorization: Bearer your_token_here
 
+## ✅ 5. 📄 Add to Documentation
+Update your README:
+
+    ### 📬 Email Notifications
+
+    - On borrow and return, users receive confirmation emails.
+    - Email configured via `.env` using SMTP.
+    - Templates located in `resources/views/emails/`.
+
+    ### 🪵 Event Logging
+
+    - Each borrow and return event is logged in `storage/logs/laravel.log`.
+
+
+## ✅  📧 Mail Configuration in .env
+Update your .env file with mail credentials. Example using Gmail SMTP:
+
+MAIL_MAILER=smtp
+    MAIL_HOST=smtp.gmail.com
+    MAIL_PORT=587
+    MAIL_USERNAME=your_email@gmail.com
+    MAIL_PASSWORD=your_app_password   # Use App Password if 2FA enabled
+    MAIL_ENCRYPTION=tls
+    MAIL_FROM_ADDRESS=your_email@gmail.com
+    MAIL_FROM_NAME="Library API"
 
 ## 📚 Book Management
     POST /api/create-book – Add new book
