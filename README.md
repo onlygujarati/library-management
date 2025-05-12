@@ -84,7 +84,7 @@ The API supports secure authentication using Laravel Sanctum. Upon successful re
     makefile
     Authorization: Bearer your_token_here
 
-## ✅ 5. 📄 Add to Documentation
+## ✅ 5. 📄 Email Documentation
 Update your README:
 
     ### 📬 Email Notifications
