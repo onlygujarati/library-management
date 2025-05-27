@@ -1,11 +1,29 @@
 services:
   - type: web
     name: laravel-app
-    env: docker
-    plan: free
-    buildCommand: ./render/build.sh
-    startCommand: php artisan serve --host=0.0.0.0 --port=10000
-    dockerfilePath: Dockerfile
+    env: php
+    branch: main  # ya jo bhi branch hai
+    buildCommand: |
+      composer install --no-interaction --prefer-dist --optimize-autoloader
+      php artisan config:cache
+      php artisan migrate --force
+    startCommand: php artisan serve --host 0.0.0.0 --port 8000
     envVars:
+      - key: APP_KEY
+        sync: false
       - key: APP_ENV
-        value: production
+        sync: false
+      - key: APP_DEBUG
+        sync: false
+      - key: DB_CONNECTION
+        sync: false
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_DATABASE
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
